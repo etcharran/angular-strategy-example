@@ -1,0 +1,8 @@
+<p>test-two works!</p>
+
+{{componentObject | async | json}}
+
+<ng-container *ngIf="componentObject | async as c">
+    <input type="text" [ngModel]="c.title" (ngModelChange)="change($event)">
+</ng-container>
+<button (click)="change('change')">Change</button>
